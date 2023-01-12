@@ -11,14 +11,12 @@ export default function Home({ renderTime }: { renderTime: string }) {
   )
 }
 
-const revalTime = 10
-
-export async function getStaticProps() {
+export function getStaticProps() {
   console.log('hello')
   return {
     props: {
       renderTime: new Date().toString()
     },
-    revalidate: revalTime // In seconds
+    revalidate: 10 // In seconds
   }
 }
